@@ -12,17 +12,14 @@ class RouteServiceProvider extends ServiceProvider
 {
     /**
      * The path to your application's "home" route.
-     *
+     *v
      * Typically, users are redirected here after authentication.
      *
      * @var string
      */
     public const HOME = '/home';
 
-    /**
-     * Quando namespace presente come esta 
-     */
-    protected $namespace = 'App\\Http\\Controllers';
+    public $namespace = 'App\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -35,10 +32,12 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             Route::middleware('api')
+                ->namespace($this->namespace)
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }
