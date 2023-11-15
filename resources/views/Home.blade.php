@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <p> Olá hoje é aniversário de {{$nome}} Ele faz {{$idade}} anos,<br> Lique para ele pelo Número: </p>
-    <ul  style="list-style: none;">
+    <h1 style="margin-bottom: 3px">Home</h1>
+    <hr>
+    <p style="margin: 0"> Olá hoje é aniversário de <b>{{$nome}}</b>ele faz <strong>{{$idade}}</strong> anos.<br> Lique para ele pelo Número: </p>
+    <ul  style="list-style: none; margin: 0; padding: 0;">
         @foreach ($telefones as $telefone)
-        <li> {{$telefone}} </li>
+        <li> <b>{{$telefone}}</b> </li>
         @endforeach
     </ul>
 </body>
